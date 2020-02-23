@@ -55,6 +55,73 @@ ul {
   justify-content: space-around;
 }
 
+h2 {
+  font-size: 28px;
+  padding-top: 61px;
+  padding-left: 39px;
+  letter-spacing: -2.4px;
+}
+
+.services {
+  margin-top: -23px;
+  background-color: #f1f1f1;
+  color: #666d89;
+}
+
+.services_overview {
+  font-size: 16px;
+  letter-spacing: -0.65px;
+  line-height: 26px;
+  padding-left: 40px;
+  padding-right: 40px;
+  text-align: justify;
+}
+
+.services_columns {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding-left: 40px;
+  padding-right: 40px;
+  padding-top: 29px;
+}
+
+.service_item {
+  display: flex;
+  justify-content: space-between;
+  width: 299px;
+  margin-bottom: 27px;
+}
+
+.service_icon {
+  width: 59px;
+  height: 59px;
+  padding-top: 4px;
+}
+
+.service_content {
+  width: 220px;
+}
+
+.service_name {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 900;
+  color: #666d89;
+  letter-spacing: -2.3px;
+}
+
+.service_description {
+  margin: 8px 0 0;
+  height: 66px;
+  font-size: 9px;
+  letter-spacing: 0.0562rem;
+  line-height: 22px;
+  overflow: hidden;
+  color: #767e9e;
+  text-align: justify;
+}
+
 @font-face {
   font-style: normal;
   font-weight: normal;
