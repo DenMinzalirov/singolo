@@ -37,7 +37,6 @@ ul {
   justify-content: space-between;
   font-size: 12px;
   margin-right: 40px;
-  
 }
 
 .circle {
@@ -46,6 +45,14 @@ ul {
   margin: 6px 14px;
   background: rgb(73, 78, 98);
   clip-path: circle(50%);
+}
+
+.slider {
+  height: 600px;
+  background-color: rgb(240, 108, 100);
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
 }
 
 @font-face {
