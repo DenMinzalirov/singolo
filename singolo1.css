@@ -39,6 +39,15 @@ ul {
   margin-right: 40px;
 }
 
+li:hover {
+  color: #f06c64;
+  cursor: pointer;
+}
+
+.arrow {
+  cursor: pointer;
+}
+
 .circle {
   width: 3px;
   height: 3px;
@@ -120,6 +129,7 @@ h2 {
   overflow: hidden;
   color: #767e9e;
   text-align: justify;
+  text-overflow: clip;
 }
 
 @font-face {
