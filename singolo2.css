@@ -75,7 +75,7 @@ ul.portfolio_menu > li:hover {
   cursor: pointer;
 }
 
-.menu_item {
+.portfolio_menu_itemmenu_item {
   padding-right: 2px;
   padding-left: 2px;
 
@@ -122,11 +122,12 @@ ul.portfolio_menu > li:hover {
 
 .about_title_logo {
   margin-bottom: 20px;
-
   font-size: 27px;
   font-family: "Lato Black";
   color: #666d89;
   letter-spacing: 1.2px;
+  padding-top: 0px;
+  padding-left: 42px;
 }
 
 span.about_title_text {
