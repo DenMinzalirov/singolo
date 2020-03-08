@@ -1,11 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Singolo. Part 3</title>
+  <link rel="stylesheet" href="singolo3.css">
 </head>
-<body>
 
+<body>
+  <main>
+    <h1 class="title_h1">Get a Quote</h1>
+    <span class="title-info">
+      Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis, non commodo luctus, nisi
+      erat porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus commodo, tortor mauris
+      condimentum nibh.
+    </span>
+    <section class="form_info">
+      <form class="form_container">
+        <input class="form_item" type="text" name="username" placeholder="Name (Required)" inputmode="text"
+          pattern="^[a-zA-Z]+$" required>
+        <input class="form_item" type="email" name="email" placeholder="Email (Required)" inputmode="email" required>
+        <input class="form_item" type="text" name="subject" placeholder="Subject" inputmode="text">
+        <textarea name="describe_field" placeholder="Describe your project in detail..."></textarea>
+        <button>Submit</button>
+      </form>
+      <div class="contact_container">
+        <h3 class="contact_h3">Contact Information</h3>
+        <p class="contact_text">
+          Quisque hendrerit purus dapibus, ornare nibh vitae, viver-ra nibh. Fusce vitae aliquam tellus. Proin sit amet
+          volutpat libero. Nulla sed nunc et tortor luctus faucibus. Morbi at aliquet turpis, et consequat felis.
+        </p>
+        <div class="phone_tel_adress">
+          <div class="note">
+            <div class="pics"><img src="assets/adress_pic.png" alt="adress"></div>
+            <div class="note_text"><span>Elm St. 14/05 Lost City</span></div>
+          </div>
+          <div class="note">
+            <div class="pics"><img src="assets/phone_pic.png" alt="phone"></div>
+            <div class="note_text">
+              <a href="tel:03528 331 86 35">
+                <span>03528 331 86 35</span>
+              </a>
+            </div>
+          </div>
+          <div class="note">
+            <div class="pics"><img src="assets/email-pic.png" alt="email"></div>
+            <div class="note_text">
+              <a href="mailto:info@singolo.com">
+                <span>info@singolo.com</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+      <p class="copyright_text">© Copyright 2013</p>
+    <div class="social_pics">
+      <img src="assets/facebook.png" alt="facebook">
+      <img src="assets/google.png" alt="google">
+      <img src="assets/tw.png" alt="twitter">
+      <img src="assets/li.png" alt="linked_in">
+    </div>
+  </footer>
 </body>
+
 </html>
