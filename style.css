@@ -7,6 +7,11 @@ body {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   display: flex;
   justify-content: space-between;
@@ -38,8 +43,16 @@ header {
   width: 412px;
 }
 
-li:hover {
+.menu_item_active {
   color: #f06c64;
+}
+
+li {
+  list-style-type: none;
+}
+
+li:hover {
+  /* color: #f06c64; */
   cursor: pointer;
 }
 
