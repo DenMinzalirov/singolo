@@ -127,7 +127,7 @@ const swipedetect = el => {
           }
         }
       }
-      var touchobj = e.changedTouches[0];
+      let touchobj = e.changedTouches[0];
       startX = touchobj.pageX;
       startY = touchobj.pageY;
       startTime = new Date().getTime();
@@ -147,7 +147,7 @@ const swipedetect = el => {
   surface.addEventListener(
     "touchend",
     function(e) {
-      var touchobj = e.changedTouches[0];
+      let touchobj = e.changedTouches[0];
       distX = touchobj.pageX - startX;
       distY = touchobj.pageY - startY;
       elapsedTime = new Date().getTime() - startTime;
@@ -170,5 +170,67 @@ const swipedetect = el => {
   );
 };
 
-var el = document.querySelector(".slider");
+const el = document.querySelector(".slider");
 swipedetect(el);
+
+const blackPhoneVert = document.querySelector(".tel_vert");
+const blackPhoneGor = document.querySelector(".tel_gor");
+slide1.addEventListener("click", e => {
+  if (e.target.className === "tel_vert") {
+    blackPhoneVert.src =
+      blackPhoneVert.src.indexOf("assets/phone-vertical-bl") !== -1
+        ? "./assets/phone-vertical.png"
+        : "./assets/phone-vertical-bl.png";
+  }
+  if (e.target.className === "tel_gor") {
+    blackPhoneGor.src =
+      blackPhoneGor.src.indexOf("assets/phone-horizontal-bl") !== -1
+        ? "./assets/phone-horizontal.png"
+        : "./assets/phone-horizontal-bl.png";
+  }
+});
+// Portfolio
+
+const portfolioImages = document.querySelector('.image_items');
+portfolioImages.addEventListener('click', (e)=>{
+  const imegeItem = document.querySelectorAll('.image_item');
+  imegeItem.forEach((el)=>{
+    el.classList.remove('active_portfolio')
+  });
+  if (e.target.parentElement.className === 'image_item') {
+    if (e.target.parentElement.className.indexOf('active_portfolio')+1 ) {
+      e.target.parentElement.classList.remove('active_portfolio')
+    }else {e.target.parentElement.classList.add('active_portfolio')}
+    // поработать над убиранием рамки
+  }
+})
+
+const shuffle = (a) => {
+  for (let i = a.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+
+const indexImg = [11,12,13,14,21,22,23,24,31,32,33,34]
+const arrImg = document.querySelectorAll('.portfolio_img');
+const portfoliMenu = document.querySelector('.portfolio_menu');
+portfoliMenu.addEventListener('click',(e)=>{
+  if (e.target.className === 'portfolio_menu_item') {
+    let index = 0
+    shuffle(indexImg);
+    arrImg.forEach((el)=>{
+      el.src = `assets/${indexImg[index]}.jpg`
+      index++
+    });
+    console.log(e.target);
+  }
+  if (e.target.className === "portfolio_menu_item") {
+    const elements = document.querySelectorAll(".portfolio_menu_item");
+    elements.forEach(e => {
+      e.classList.remove("portfolio_menu_active");
+    });
+    e.target.classList.add("portfolio_menu_active");
+  }
+})
