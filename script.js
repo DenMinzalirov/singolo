@@ -191,40 +191,41 @@ slide1.addEventListener("click", e => {
 });
 // Portfolio
 
-const portfolioImages = document.querySelector('.image_items');
-portfolioImages.addEventListener('click', (e)=>{
-  const imegeItem = document.querySelectorAll('.image_item');
-  imegeItem.forEach((el)=>{
-    el.classList.remove('active_portfolio')
+const portfolioImages = document.querySelector(".image_items");
+portfolioImages.addEventListener("click", e => {
+  const imegeItem = document.querySelectorAll(".image_item");
+  imegeItem.forEach(el => {
+    el.classList.remove("active_portfolio");
   });
-  if (e.target.parentElement.className === 'image_item') {
-    if (e.target.parentElement.className.indexOf('active_portfolio')+1 ) {
-      e.target.parentElement.classList.remove('active_portfolio')
-    }else {e.target.parentElement.classList.add('active_portfolio')}
+  if (e.target.parentElement.className === "image_item") {
+    if (e.target.parentElement.className.indexOf("active_portfolio") + 1) {
+      e.target.parentElement.classList.remove("active_portfolio");
+    } else {
+      e.target.parentElement.classList.add("active_portfolio");
+    }
     // поработать над убиранием рамки
   }
-})
+});
 
-const shuffle = (a) => {
+const shuffle = a => {
   for (let i = a.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1));
-      [a[i], a[j]] = [a[j], a[i]];
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
   }
   return a;
-}
+};
 
-const indexImg = [11,12,13,14,21,22,23,24,31,32,33,34]
-const arrImg = document.querySelectorAll('.portfolio_img');
-const portfoliMenu = document.querySelector('.portfolio_menu');
-portfoliMenu.addEventListener('click',(e)=>{
-  if (e.target.className === 'portfolio_menu_item') {
-    let index = 0
+const indexImg = [11, 12, 13, 14, 21, 22, 23, 24, 31, 32, 33, 34];
+const arrImg = document.querySelectorAll(".portfolio_img");
+const portfoliMenu = document.querySelector(".portfolio_menu");
+portfoliMenu.addEventListener("click", e => {
+  if (e.target.className === "portfolio_menu_item") {
+    let index = 0;
     shuffle(indexImg);
-    arrImg.forEach((el)=>{
-      el.src = `assets/${indexImg[index]}.jpg`
-      index++
+    arrImg.forEach(el => {
+      el.src = `assets/${indexImg[index]}.jpg`;
+      index++;
     });
-    console.log(e.target);
   }
   if (e.target.className === "portfolio_menu_item") {
     const elements = document.querySelectorAll(".portfolio_menu_item");
@@ -233,4 +234,34 @@ portfoliMenu.addEventListener('click',(e)=>{
     });
     e.target.classList.add("portfolio_menu_active");
   }
-})
+});
+
+// Form submit
+
+const formContainer = document.querySelector(".form_container");
+const modalWraper = document.querySelector(".modal_wraper");
+const submitButton = document.querySelector(".submit");
+const subjectForm = document.querySelector("#subject");
+const describeForm = document.querySelector("#describe");
+const modalMsg = document.querySelector(".modal_msg");
+submitButton.addEventListener("click", e => {
+  if (document.querySelector("#username").value && (document.querySelector("#email").value.indexOf('@'))+1) {
+    e.preventDefault();
+    modalWraper.style.display = "flex";
+    modalMsg.insertAdjacentHTML("beforeend", `<p>Письмо отправлено</p>`);
+    let subjectValue = subjectForm.value || "Без темы";
+    modalMsg.insertAdjacentHTML("beforeend", `<p>Тема: ${subjectValue}</p>`);
+    let describeField = describeForm.value || "Без описания";
+    modalMsg.insertAdjacentHTML(
+      "beforeend",
+      `<p>Описание: ${describeField}</p><button class="close-btn" type="button">OK</button>`
+    );
+    const hidenModal = document.querySelector(".close-btn");
+    hidenModal.addEventListener("click", e => {
+      e.preventDefault();
+      modalWraper.style.display = "none";
+      formContainer.reset();
+      modalMsg.innerHTML = ``;
+    });
+  }
+});
