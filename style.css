@@ -7,9 +7,16 @@ body {
   margin: 0 auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 header {
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 1020px;
   align-items: baseline;
   height: 89px;
   font-family: "Lato Bold", sans-serif;
@@ -19,6 +26,7 @@ header {
   text-transform: uppercase;
   letter-spacing: -0.02rem;
   font-weight: 700;
+  z-index: 1;
 }
 
 .header_logo {
@@ -38,25 +46,34 @@ header {
   width: 412px;
 }
 
-li:hover {
+.menu_item_active {
   color: #f06c64;
+}
+
+li {
+  list-style-type: none;
+}
+
+li:hover {
+  /* color: #f06c64; */
   cursor: pointer;
 }
 
 .arrow {
   cursor: pointer;
-  margin-top: -65px;
-  margin-left: -37px;
+  position: absolute;
+  top: 50%;
 }
 
-.tel_vert {
+/* .tel_vert {
   margin-top: -65px;
   margin-left: -30px;
-}
+} */
 
 .tel_gor {
-  margin-top: -67px;
-  margin-left: -4px;
+  padding-bottom: 124px;
+  /* margin-top: -67px;
+  margin-left: -4px; */
 }
 
 .circle {
@@ -67,14 +84,118 @@ li:hover {
   clip-path: circle(50%);
 }
 
-.slider {
-  height: 534px;
-  background-color: rgb(240, 108, 100);
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  border-bottom: 6px solid #ea676b;
+.right {
+  right: 40px;
+  left: auto;
 }
+
+.left {
+  left: 40px;
+  z-index: 1;
+  right: auto;
+}
+
+.slider {
+  position: relative;
+  height: 628px;
+  border-bottom: 6px solid #ea676b;
+  overflow: hidden;
+  top: 50%;
+  left: 50%;
+  text-align: center;
+  transform: translate(-50%, 0%);
+}
+
+.slider_container {
+  height: 100%;
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.slider_item1 {
+  display: none;
+  background-color: #f06c64;
+  height: 100%;
+  text-align: center;
+  padding-top: 86px;
+  animation: 0.5s ease-in-out;
+  position: relative;
+  margin: 0 auto;
+}
+
+.slider_item2 {
+  display: none;
+  background-color: #648bf0;
+  height: 100%;
+  text-align: center;
+  padding-top: 86px;
+  animation: 0.5s ease-in-out;
+  position: relative;
+  margin: 0 auto;
+}
+
+.active,
+.next {
+  display: block;
+}
+
+.next {
+  position: absolute;
+  top: 0;
+  width: 100%;
+}
+
+.to-left {
+  animation-name: left;
+}
+
+.from-right {
+  animation-name: right;
+}
+
+.to-right {
+  animation-name: right;
+  animation-direction: reverse;
+}
+
+.from-left {
+  animation-name: left;
+  animation-direction: reverse;
+}
+
+@keyframes left {
+  from {
+    left: 0;
+  }
+  to {
+    left: -100%;
+  }
+}
+
+@keyframes right {
+  from {
+    left: 100%;
+  }
+  to {
+    left: 0;
+  }
+}
+
+#services, #portfolio, #about, #contact {
+  position: relative;
+  top: -89px;
+  width: 89px;
+  height: 89px;
+}
+
+/* .slider_item2.active {
+  display: block;
+}
+
+.slider_item1.active {
+  display: block;
+} */
 
 h2 {
   font-size: 28px;
@@ -87,7 +208,7 @@ h2 {
   margin-top: -23px;
   background-color: #f1f1f1;
   color: #666d89;
-  margin-left: -40px;
+  /* margin-left: -40px; */
   height: 500px;
 }
 
@@ -191,7 +312,7 @@ section {
   width: 1020px;
   height: 865px;
   margin: 0 auto;
-  margin-left: -40px;
+  /* margin-left: -40px; */
   background-color: #2d303a;
   border-bottom: 6px solid #323746;
 }
@@ -203,6 +324,10 @@ section {
 
 .portfolio_title {
   padding-top: 60px;
+}
+
+.portfolio_img{
+  cursor: pointer;
 }
 
 .portfolio_title_logo {
@@ -258,6 +383,13 @@ ul.portfolio_menu > li:hover {
   cursor: pointer;
 }
 
+.portfolio_menu_active {
+  color: red;
+
+  border: 1px solid red;
+  cursor: pointer;
+}
+
 .menu_item {
   padding-right: 14px;
   padding-left: 2px;
@@ -271,7 +403,11 @@ ul.portfolio_menu > li:hover {
   width: 940px;
   height: 600px;
   margin-top: 20px;
-  overflow: hidden;
+  /* overflow: hidden; */
+}
+
+.active_portfolio {
+  outline: 5px solid #f06c64;
 }
 
 .image_item {
@@ -288,7 +424,7 @@ ul.portfolio_menu > li:hover {
 }
 
 .about {
-  margin-left: -40px;
+  /* margin-left: -40px; */
   background-color: #f2f2f2;
   border-bottom: 6px solid #ffffff;
   height: 726px;
@@ -431,10 +567,10 @@ body {
 }
 
 main {
-  background-color: #f06c64;
+  /* background-color: #f06c64; */
   padding-top: 60px;
-  padding-left: 40px;
-  margin-bottom: -60px;
+  /* padding-left: 40px;
+  margin-bottom: -60px; */
 }
 
 .title_h1 {
@@ -572,6 +708,7 @@ textarea {
   border-bottom: 6px solid #ea676b;
   padding-top: 60px;
   margin-bottom: -60px;
+  padding-left: 39px;
 }
 
 @font-face {
