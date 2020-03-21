@@ -9,6 +9,9 @@
 </head>
 
 <body>
+  <div class="modal_wraper">
+    <div class="modal_msg"></div>
+  </div>
   <header>
     <h1 class="header_logo">singolo<span>*</span></h1>
     <nav class="nav_menu">
@@ -36,6 +39,7 @@
     </nav>
   </header>
   <main>
+
     <section class="slider">
       <img class="control arrow left" src="./assets/left.png" alt="left arr">
       <div class="slider_container">
@@ -243,12 +247,13 @@
       </span>
       <div class="form_info">
         <form class="form_container">
-          <input class="form_item" type="text" name="username" placeholder="Name (Required)" inputmode="text"
-            pattern="^[a-zA-Z]+$" required>
-          <input class="form_item" type="email" name="email" placeholder="Email (Required)" inputmode="email" required>
-          <input class="form_item" type="text" name="subject" placeholder="Subject" inputmode="text">
-          <textarea name="describe_field" placeholder="Describe your project in detail..."></textarea>
-          <button>Submit</button>
+          <input id='username' class="form_item" type="text" name="username" placeholder="Name (Required)"
+             inputmode="text" required>
+          <input id='email' class="form_item" type="email" name="email" placeholder="Email (Required)" inputmode="email"
+            required>
+          <input class="form_item" id="subject" type="text" name="subject" placeholder="Subject" inputmode="text">
+          <textarea name="describe_field" id='describe' placeholder="Describe your project in detail..."></textarea>
+          <button class="submit">Submit</button>
         </form>
         <div class="contact_container">
           <h3 class="contact_h3">Contact Information</h3>
