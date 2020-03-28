@@ -245,7 +245,10 @@ const subjectForm = document.querySelector("#subject");
 const describeForm = document.querySelector("#describe");
 const modalMsg = document.querySelector(".modal_msg");
 submitButton.addEventListener("click", e => {
-  if (document.querySelector("#username").value && (document.querySelector("#email").value.indexOf('@'))+1) {
+  if (
+    document.querySelector("#username").value &&
+    document.querySelector("#email").value.indexOf("@") + 1
+  ) {
     e.preventDefault();
     modalWraper.style.display = "flex";
     modalMsg.insertAdjacentHTML("beforeend", `<p>Письмо отправлено</p>`);
@@ -264,4 +267,29 @@ submitButton.addEventListener("click", e => {
       modalMsg.innerHTML = ``;
     });
   }
+});
+
+//respons
+const navBurgerMenu = document.querySelector(".nav_menu");
+const burgMenu = document.querySelector(".header_menu");
+const navMenuItem = document.querySelectorAll(".menu_item");
+burgMenu.addEventListener("click", () => {
+  if (burgMenu.classList[1] === "rot90") {
+    burgMenu.classList.remove("rot90");
+    navBurgerMenu.classList.remove("show-nav");
+  } else {
+    navBurgerMenu.classList.add("show-nav");
+    burgMenu.classList.add("rot90");
+  }
+});
+navMenuItem.forEach(el => {
+  el.addEventListener("click", () => {
+    if (burgMenu.classList[1] === "rot90") {
+      burgMenu.classList.remove("rot90");
+      navBurgerMenu.classList.remove("show-nav");
+    } else {
+      navBurgerMenu.classList.add("show-nav");
+      burgMenu.classList.add("rot90");
+    }
+  });
 });
