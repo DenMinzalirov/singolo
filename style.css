@@ -923,7 +923,7 @@ textarea {
   }
   .form_section {
     height: 100%;
-    padding: 5% 3%;
+    padding: 4% 30px;
   }
   .form_info {
     display: flex;
@@ -966,6 +966,30 @@ textarea {
   .social_pics {
     padding-right: 0;
     padding-bottom: 0;
+  }
+  .title-info {
+    padding: 0;
+  }
+  .title_h1 {
+    padding-bottom: 14px;
+  }
+}
+@media (max-width: 375px) {
+  .left {
+    left: 1%;
+  }
+  .right {
+    right: 1%;
+  }
+  .slider_item2 {
+    padding-top: 60px;
+  }
+  .services_overview {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+  .service_icon {
+    padding-right: 3px;
   }
 }
 
