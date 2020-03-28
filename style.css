@@ -770,6 +770,21 @@ textarea {
   overflow: hidden;
 }
 
+.submit {
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #fbc65f;
+  color: #886a30;
+  transition: all 0.3s ease-in-out;
+  width: 100%;
+  line-height: 14px;
+  border: none;
+  border-radius: 5px;
+  box-sizing: border-box;
+  height: 50px;
+  margin: 12px 8px;
+}
+
 @media (max-width: 1020px) {
   header {
     width: 100%;
@@ -781,6 +796,9 @@ textarea {
   .tel_gor {
     width: 345px;
     padding-bottom: 62px;
+  }
+  .slider {
+    height: auto;
   }
 
   .slider_item2 img {
