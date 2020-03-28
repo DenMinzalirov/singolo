@@ -809,6 +809,16 @@ textarea {
     border-bottom: 6px solid #ea676b;
     padding: 6% 2%;
   }
+  .portfolio_block {
+    padding-left: 0;
+  }
+  .image_item img {
+    /* max-width: 220px; */
+    width: 100%;
+    /* max-height: 187px; */
+    height: 100%;
+    object-fit: cover;
+  }
 }
 
 @media (max-width: 768px) {
@@ -844,6 +854,118 @@ textarea {
   .menu_items > li {
     padding: 13px 0;
     font-size: 24px;
+  }
+  .portfolio_block {
+    padding-left: 0;
+  }
+  .tel_vert {
+    width: 80px;
+  }
+
+  .tel_gor {
+    width: 168px;
+    padding-bottom: 12%;
+  }
+  .left {
+    left: 6%;
+  }
+  .right {
+    right: 6%;
+  }
+  .slider {
+    height: 100%;
+  }
+  .slider_item1 {
+    padding-top: 50px;
+  }
+  .slider_item2 {
+    padding-top: 32px;
+  }
+
+  .slider_item2 img {
+    height: auto;
+    width: 50%;
+    max-width: 517px;
+  }
+
+  .services_columns {
+    padding: 4%;
+  }
+  .service_item {
+    width: 100%;
+  }
+  .service_description {
+    font-size: 12px;
+  }
+  .image_item img {
+    /* max-width: 220px; */
+    width: 100%;
+    /* max-height: 187px; */
+    height: 100%;
+    object-fit: cover;
+  }
+  .image_item {
+    flex-basis: 32%;
+  }
+  .image_item:nth-child(n + 9) {
+    display: none;
+  }
+  .about {
+    height: 100%;
+  }
+  .about_block_items {
+    height: 100%;
+    flex-wrap: wrap;
+  }
+  .about_item {
+    width: 100%;
+    margin: 5% 0.5%;
+  }
+  .form_section {
+    height: 100%;
+    padding: 5% 3%;
+  }
+  .form_info {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+  .form_item {
+    padding-left: 0;
+  }
+  textarea {
+    padding-left: 0;
+  }
+  .submit {
+    font-size: 14px;
+    font-weight: bold;
+    background-color: #fbc65f;
+    color: #886a30;
+    transition: all 0.3s ease-in-out;
+    width: 100%;
+    line-height: 14px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    height: 50px;
+    margin: 12px 0;
+  }
+  .contact_container {
+    width: 100%;
+    padding-left: 0;
+    padding-top: 0;
+  }
+  .footer {
+    margin-top: 55px;
+    justify-content: center;
+    height: 75px;
+  }
+  .copyright_text {
+    display: none;
+  }
+  .social_pics {
+    padding-right: 0;
+    padding-bottom: 0;
   }
 }
 

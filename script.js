@@ -274,7 +274,6 @@ const navBurgerMenu = document.querySelector(".nav_menu");
 const burgMenu = document.querySelector(".header_menu");
 const navMenuItem = document.querySelectorAll(".menu_item");
 burgMenu.addEventListener("click", () => {
-  console.log(navMenuItem);
   if (burgMenu.classList[1] === "rot90") {
     burgMenu.classList.remove("rot90");
     navBurgerMenu.classList.remove("show-nav");
